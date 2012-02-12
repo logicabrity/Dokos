@@ -4,5 +4,10 @@ SERVER = ("", 6667)
 IDENT = ("", "")
 CHANNEL = ("", "")
 
-bot = Bot(SERVER, IDENT, CHANNEL)
-bot.loop()
+LOGGING_DIR = ""
+
+if IDENT[0] != "":
+    bot = Bot(SERVER, IDENT, CHANNEL, LOGGING_DIR)
+    bot.loop()
+else:
+    print "Please configure."
