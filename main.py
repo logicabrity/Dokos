@@ -4,10 +4,10 @@ SERVER = ("", 6667)
 IDENT = ("", "")
 CHANNEL = ("", "")
 
-LOGGING_DIR = ""
+LOGFILE = ""
 
-if IDENT[0] != "":
-    bot = Bot(SERVER, IDENT, CHANNEL, LOGGING_DIR)
+if IDENT[0] != "" and LOGFILE != "":
+    bot = Bot(SERVER, IDENT, CHANNEL, LOGFILE)
     bot.loop()
 else:
     print "Please configure."

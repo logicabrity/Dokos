@@ -6,12 +6,12 @@ class Bot(object):
     ping_pattern = re.compile('^PING (?P<payload>.*)')
     chanmsg_pattern = re.compile(':(?P<nick>.*?)!\S+\s+?PRIVMSG\s+#(?P<channel>[-\w]+)\s+:(?P<message>[^\n\r]+)')
 
-    def __init__(self, server, ident, channel, directory):
+    def __init__(self, server, ident, channel, path):
         self._dispatch_table = (
             (self.ping_pattern, self.handle_ping),
             (self.chanmsg_pattern, self.handle_chanmsg))
     
-        self._logger = Logging(directory)
+        self._logger = Logging(path)
         self._connection = Connection(server)
         self.register_connection(ident)
         self.join_channel(channel)
