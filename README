@@ -1,4 +1,3 @@
 Dokos 
 
-simple IRC bot which connects to a single channel and logs channel messages.
-It will create a new log file each day.
+simple IRC bot which connects to a single channel and logs channel messages to a file.
