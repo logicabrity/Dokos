@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from bot import Bot
 
 SERVER = ("", 6667)
